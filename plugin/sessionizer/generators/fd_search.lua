@@ -51,6 +51,7 @@ end
 local function get_command(opts)
     local command = {
         opts.fd_path,
+        ".",
         "-Hs",
         "^.git$",
         "-td",
