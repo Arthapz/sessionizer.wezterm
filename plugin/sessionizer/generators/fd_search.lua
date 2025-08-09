@@ -36,7 +36,6 @@ local function normalize_options(opts)
         fd_path = fd_path,
         include_submodules = false,
         max_depth = 16,
-        format = "{//}",
         exclude = { "node_modules" },
         extra_args = {},
     }
@@ -57,8 +56,6 @@ local function get_command(opts)
         "-td",
         "--max-depth=" .. opts.max_depth,
         "--prune",
-        "--format",
-        opts.format,
     }
     if opts.include_submodules then
         command[#command + 1] = "-tf"
